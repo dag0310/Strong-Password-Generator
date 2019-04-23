@@ -32,8 +32,8 @@ document.getElementById("psbtn").addEventListener("click", function () {
     if (document.getElementById("as").checked) {
         const select = document.createRange()
         select.selectNode(pwoutput),
-            window.getSelection().removeAllRanges(),
-            window.getSelection().addRange(select),
-            document.execCommand("copy");
+        window.getSelection().removeAllRanges(),
+        window.getSelection().addRange(select),
+        document.execCommand("copy");
     }
 })
