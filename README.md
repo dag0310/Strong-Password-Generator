@@ -1,5 +1,7 @@
 # Strong Password Generator
 
+https://marshall-ku.github.io/Strong-Password-Generator/
+
 ![thumb](thumb.PNG)
 
 Creates Strong Passwords with simple JS.
