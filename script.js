@@ -18,7 +18,7 @@ document.getElementById("psbtn").addEventListener("click", function () {
         chars = chars + "abcdefghijklmnopqrstuvwxyz"
     }
     if (document.getElementById("rs").checked) {
-        chars = chars.replace(/01|i|O/g, "")
+        chars = chars.replace(/01|i|I|O/g, "")
     }
 
     for (let i = 0; i < document.getElementById("pwlength").value; i++) {
