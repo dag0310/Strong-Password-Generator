@@ -78,6 +78,7 @@ body {
     padding:5px 10px;
     min-width:170px;
     min-height:1rem;
+    max-width:90%;
     line-height:1rem;
     background:#c9c9c9;
     border:1px solid #333;
