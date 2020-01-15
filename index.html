@@ -2,10 +2,9 @@
 <html>
 
 <head>
-    <title>Password Generator</title>
+    <title>Javascript Key</title>
     <meta charset="utf-8">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="./style.css">
 </head>
 
@@ -25,12 +24,12 @@
     <div id="psbtn">click to generate password</div>
     <div class="line"></div>
     <div id="cbx">
-        <div><input type="checkbox" id="number" checked><label for="number">Number</label></div>
-        <div><input type="checkbox" id="symbol"><label for="symbol">Symbol (eg. !@#)</label></div>
-        <div><input type="checkbox" id="capital" checked><label for="capital">Capital Letter</label></div>
-        <div><input type="checkbox" id="small" checked><label for="small">Small Letter</label></div>
-        <div><input type="checkbox" id="rs"><label for="rs">Remove Similar String (eg. o, 0, O)</label></div>
-        <div><input type="checkbox" id="as" checked><label for="as">Auto Select & Copy</label></div>
+        <div class="settings"><input type="checkbox" id="number" checked><label for="number">Number</label></div>
+        <div class="settings"><input type="checkbox" id="symbol"><label for="symbol">Symbol (eg. !@#)</label></div>
+        <div class="settings"><input type="checkbox" id="capital" checked><label for="capital">Capital Letter</label></div>
+        <div class="settings"><input type="checkbox" id="small" checked><label for="small">Small Letter</label></div>
+        <div class="settings"><input type="checkbox" id="removeSimilar"><label for="removeSimilar">Remove Similar String (eg. o, 0, O)</label></div>
+        <div class="settings"><input type="checkbox" id="autoCopy" checked><label for="autoCopy">Auto Select & Copy</label></div>
         <div class="flex"><span>Length :</span>&nbsp;<input type="number" id="pwlength" value="20"></div>
     </div>
 
