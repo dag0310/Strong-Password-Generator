@@ -27,19 +27,19 @@ function createChars() {
     let chars = "";
 
     if (setting.number) {
-        chars = chars + "0123456789" // 숫자 추가
+        chars = chars + "0123456789"
     }
     if (setting.symbol) {
-        chars = chars + "!@#$%^&*()-_=+" // 각종 기호 추가
+        chars = chars + "!@#$%^&*()-_=+"
     }
     if (setting.capital) {
-        chars = chars + "ABCDEFGHIJKLMNOPQRSTUVWXYZ" // 대문자 추가
+        chars = chars + "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     }
     if (setting.small) {
-        chars = chars + "abcdefghijklmnopqrstuvwxyz" // 소문자 추가
+        chars = chars + "abcdefghijklmnopqrstuvwxyz"
     }
     if (setting.removeSimilar) {
-        chars = chars.replace(/01|i|I|O/g, "") // 헷갈리는 스트링 제거
+        chars = chars.replace(/01|i|I|O/g, "")
     }
 
     return chars;
