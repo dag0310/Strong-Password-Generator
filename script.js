@@ -8,6 +8,7 @@ let setting = {
     "length": 20
 };
 const pwoutput = document.getElementById("password");
+let chars;
 
 function init() {
     const storage = localStorage.getItem("pw-setting");
@@ -20,29 +21,35 @@ function init() {
         input.checked = setting[input.id]
     }),
 
-    document.getElementById("pwlength").value = setting.length
+    document.getElementById("pwlength").value = setting.length,
+
+    updateChars()
 }
 
 function createChars() {
-    let chars = "";
+    let tmp = "";
 
     if (setting.number) {
-        chars = chars + "0123456789"
+        tmp = tmp + "0123456789"
     }
     if (setting.symbol) {
-        chars = chars + "!@#$%^&*()-_=+"
+        tmp = tmp + "!@#$%^&*()-_=+"
     }
     if (setting.capital) {
-        chars = chars + "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        tmp = tmp + "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     }
     if (setting.small) {
-        chars = chars + "abcdefghijklmnopqrstuvwxyz"
+        tmp = tmp + "abcdefghijklmnopqrstuvwxyz"
     }
     if (setting.removeSimilar) {
-        chars = chars.replace(/01|i|I|O/g, "")
+        tmp = tmp.replace(/01|i|I|O/g, "")
     }
 
-    return chars;
+    return tmp;
+}
+
+function updateChars() {
+    chars = createChars()
 }
 
 function saveSetting() {
@@ -52,13 +59,12 @@ function saveSetting() {
 init(),
 
 document.getElementById("psbtn").addEventListener("click", () => {
-    const chars = createChars();
-
+    const length = chars.length;
     let password = "",
         tmp;
 
-    for (let i = 0; i < document.getElementById("pwlength").value; i++) {
-        const random = Math.floor(Math.random() * chars.length);
+    for (let i = 0; i < setting.length; i++) {
+        const random = Math.floor(Math.random() * length);
         tmp = chars.charAt(random);
         password = password + tmp
     }
@@ -79,7 +85,8 @@ document.getElementById("psbtn").addEventListener("click", () => {
         const target = a.querySelector("input");
 
         setting[target.id] = target.checked,
-        saveSetting()
+        saveSetting(),
+        updateChars()
     })
 }),
 
